@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="gallery-bg">
+
+    <!-- Background music with fade-in -->
+    <audio id="bg-music" autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        // Soft fade-in for music
+        const audio = document.getElementById('bg-music');
+        audio.volume = 0;
+        let fadeAudio = setInterval(() => {
+            if(audio.volume < 0.5) {  // adjust max volume here
+                audio.volume = Math.min(audio.volume + 0.01, 0.5);
+            } else {
+                clearInterval(fadeAudio);
+            }
+        }, 100);
+    </script>
+
+    <div class="container">
+        <header class="header">
+            <h1>Our Memories</h1>
+            <p>A small collection of the moments I love the most with you.</p>
+        </header>
+
+        <section class="gallery">
+            <div class="gallery-item"><img src="img1.jpg" alt=""></div>
+            <div class="gallery-item"><img src="img2.jpg" alt=""></div>
+            <div class="gallery-item"><img src="img3.jpg" alt=""></div>
+            <div class="gallery-item"><img src="img4.jpg" alt=""></div>
+            <div class="gallery-item"><img src="img5.jpg" alt=""></div>
+            <div class="gallery-item"><img src="img6.jpg" alt=""></div>
+        </section>
+
+        <section class="back-link">
+            <a href="timeline.html" class="btn">Back to Timeline</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><span dir="rtl">انا أحب المنامن</span> | Made with love</p>
+    </footer>
+
+</body>
+</html>
